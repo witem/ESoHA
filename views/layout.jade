@@ -2,6 +2,28 @@ doctype html
 html
   head
     title= title
+    link(rel='stylesheet', href='/stylesheets/normalize.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src='/javascripts/jquery.min.js')
+    script(src='/javascripts/main.js')
   body
-    block content
+    block header
+      header.mainHeader.clearfixAB
+        .logo
+          img(src='images/logo.png')
+        block widgetHeader1
+        block widgetHeader2
+        block widgetHeader3
+        #dateTime.headerDate
+          p.time
+           span.hours
+           span.minutes
+           span.seconds
+          p.date
+           span.day
+           span.month
+           span.year
+    nav.mainMenu
+     block menu
+    section.mainContent
+     block content

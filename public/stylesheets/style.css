@@ -1,8 +1,45 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #F2FBFF;
 }
 
 a {
   color: #00B7FF;
+}
+.clearfixAB:after,
+.clearfixAB:before {
+  content: "";
+  display: table;
+}
+.clearfixAB:after {
+  clear: both;
+}
+.mainHeader {
+  padding: 10px 20px;
+  background-color: #77D6FF;
+}
+.mainHeader .logo {
+  float: left;
+}
+.mainHeader .headerDate {
+  float: right;
+  text-align: center;
+}
+.headerDate .time span {
+  font-size: 20px;
+  line-height: 20px;
+  padding: 0 10px 5px;
+}
+.headerDate .date span {
+  font-size: 12px;
+  line-height: 16px;
+  padding: 0 5px;
+}
+.mainMenu {
+  float: left;
+  width: 250px;
+  background-color: #F6FFA5;
+}
+.mainContent {
+  padding-left: 275px;
 }
