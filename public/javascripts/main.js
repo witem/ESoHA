@@ -19,7 +19,7 @@ function clock() {
     secondsContainer.html(new Date().getSeconds());
     yearContainer.html( + new Date().getYear() + 1900);
     monthContainer.html( (new Date().getMonth()<9?'0':'') + (+new Date().getMonth() + 1) );
-    dayContainer.html( (new Date().getDay()<10?'0':'') + new Date().getDay() );
+    dayContainer.html( (new Date().getDay()<9?'0':'') + (+new Date().getDay() + 1) );
 
     setInterval( function() {
         var seconds = new Date().getSeconds();
@@ -42,7 +42,7 @@ function clock() {
     function changeHours(hours) {
         hoursContainer.html( hours<10?'0'+hours:hours );
 
-        var day = new Date().getDay();
+        var day = +new Date().getDay() + 1;
         if ( day != dayContainer.html() )
             changeDay(day);
     }
@@ -50,13 +50,12 @@ function clock() {
     function changeDay(day) {
         dayContainer.html( day<10?'0'+day:day );
 
-        var month = new Date().getMonth();
+        var month = +new Date().getMonth() + 1;
         if ( month != monthContainer.html() )
             changeMonth(month);
     }
 
     function changeMonth(month) {
-        month++;
         monthContainer.html( month<10?'0'+month:month );
 
         var year = new Date().getYear();

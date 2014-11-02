@@ -1,0 +1,53 @@
+{
+  "room-1": {
+    "id": 7,
+    "name": "Кімната 1",
+    "class": "room"
+  },
+  "room-2": {
+    "id": 8,
+    "name": "Кімната 2",
+    "class": "room"
+  },
+  "room-3": {
+    "id": 9,
+    "name": "Кімната 3",
+    "class": "room"
+  },
+  "room-4": {
+    "id": 10,
+    "name": "Кімната 4",
+    "class": "room"
+  },
+
+  "settings-rules": {
+    "id": 1,
+    "name": "Правила автоматизації",
+    "class": "settings"
+  },
+  "settings-logs": {
+    "id": 2,
+    "name": "Лог системи",
+    "class": "settings"
+  },
+  "settings-users": {
+    "id": 3,
+    "name": "Управління користувачами",
+    "class": "settings"
+  },
+  "settings-devices": {
+    "id": 4,
+    "name": "Управління пристроями",
+    "class": "settings"
+  },
+  "settings-new-module": {
+    "id": 5,
+    "name": "Додання нового модуля",
+    "class": "settings"
+  },
+  "settings-all": {
+    "id": 6,
+    "name": "Загальні налаштування",
+    "class": "settings"
+  }
+}
