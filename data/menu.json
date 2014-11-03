@@ -1,21 +1,21 @@
 {
   "room-1": {
-    "id": 7,
+    "id": 8,
     "name": "Кімната 1",
     "class": "room"
   },
   "room-2": {
-    "id": 8,
+    "id": 9,
     "name": "Кімната 2",
     "class": "room"
   },
   "room-3": {
-    "id": 9,
+    "id": 10,
     "name": "Кімната 3",
     "class": "room"
   },
   "room-4": {
-    "id": 10,
+    "id": 11,
     "name": "Кімната 4",
     "class": "room"
   },
@@ -49,5 +49,10 @@
     "id": 6,
     "name": "Загальні налаштування",
     "class": "settings"
+  },
+  "logout": {
+    "id": 7,
+    "name": "Вихід",
+    "class": "logout"
   }
 }
