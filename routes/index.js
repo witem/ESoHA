@@ -4,10 +4,16 @@ var menu = require('../lib/menu');
 
 /* GET home page. */
 router.get('/', function(req, res) {
-  res.render('index', {
-    title: 'ESoHA',
-    menuArray: menu.renderMenu()
-  });
+
+  menu.renderMenu(function(menus){
+
+    res.render('index', {
+      title: 'ESoHA',
+      menuArray: menus
+    });
+
+  })
+
 });
 
 module.exports = router;
