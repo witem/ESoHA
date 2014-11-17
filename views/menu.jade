@@ -1,5 +1,8 @@
 h3 Меню
 ul
- each val in menuArray
-  li
-    a(href=val.href)= val.name
+ if (menuArray && menuArray.length > 0)
+    each val in menuArray
+        li
+            a(href=val.href)= val.name
+ else
+     p.error Помилка отримання меню

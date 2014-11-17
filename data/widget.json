@@ -1,0 +1,58 @@
+[
+  {
+    "id" : "1",
+    "type" : "swicher",
+    "name" : "Центральна лампа",
+    "page" : "room-8",
+    "featured" : true
+  },
+  {
+    "id" : "2",
+    "type" : "slider",
+    "name" : "Підсвітка",
+    "page" : "room-9",
+    "featured" : true
+  },
+  {
+    "id" : "3",
+    "type" : "info",
+    "name" : "Температура надворі",
+    "page" : "room-10",
+    "featured" : true
+  },
+  {
+    "id" : "4",
+    "type" : "spiner",
+    "name" : "Температура в кімнаті",
+    "page" : "room-11",
+    "featured" : true
+  },
+  {
+    "id" : "5",
+    "type" : "spiner",
+    "name" : "Вікно 1",
+    "page" : "room-8",
+    "featured" : true
+  },
+  {
+    "id" : "6",
+    "type" : "info",
+    "name" : "Вхідні двері",
+    "page" : "room-9",
+    "featured" : true
+  },
+  {
+    "id" : "7",
+    "type" : "slider",
+    "name" : "Витяжка",
+    "page" : "room-10",
+    "featured" : true
+  },
+  {
+    "id" : "8",
+    "type" : "swicher",
+    "name" : "Телевізор",
+    "page" : "room-11",
+    "featured" : true
+  }
+]

@@ -43,3 +43,6 @@ a {
 .mainContent {
   padding-left: 275px;
 }
+p.error {
+  color: darkred;
+}
