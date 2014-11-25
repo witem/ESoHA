@@ -63,3 +63,10 @@ function clock() {
             yearContainer.html(+year + 1900);
     }
 }
+window.spinerChange = function (windgeId, increment) {
+    val = parseInt($("#spiner-"+windgeId).html())
+    if (increment)
+        $("#spiner-"+windgeId).html(++val)
+    else
+        $("#spiner-"+windgeId).html(--val)
+};

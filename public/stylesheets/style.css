@@ -46,3 +46,17 @@ a {
 p.error {
   color: darkred;
 }
+.ui-slider-horizontal {
+  background-color: #1DFFC3;
+  height: 2px;
+}
+.ui-slider-handle {
+  top: -.6em;
+  margin-left: -.6em;
+  background-color: #4A7651;
+  border: solid 1px #1F61C7;
+  border-radius: 50em;
+}
+.ui-slider-horizontal .ui-slider-range {
+  background-color: #F20000;
+}
