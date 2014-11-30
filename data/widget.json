@@ -11,7 +11,7 @@
     "type" : "slider",
     "name" : "Підсвітка",
     "page" : "room-9",
-    "featured" : true
+    "featured" : false
   },
   {
     "id" : "3",

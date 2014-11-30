@@ -9,6 +9,7 @@ router.get '/', (req, res)->
   indexObj = { title: 'ESoHA'}
   menu.renderMenu().then (menu)->
     indexObj.menuArray = menu
+    return "home"
   .then(widget.renderWidget).then (widget)->
     indexObj.widgetArray = widget
   .done ()->

@@ -1,15 +1,34 @@
 Q  = require('q');
 fs = require('fs');
 
-parseWidget = (parsed)->
+
+getWidgetObject = ()->
+  deferred  = Q.defer()
+  fileUrl   = './data/widget.json'
+
+  fs.readFile fileUrl, "utf-8", (err, data)->
+    if err
+      deferred.reject ":-[ widget.coffee -> #{err}"
+    else
+      deferred.resolve JSON.parse(data)
+
+  return deferred.promise
+
+parseWidget = ( obj )->
+  parsed = obj.data
+  page = obj.page
   widgets = [];
   for chunk of parsed
-    widgets.push
+    if page == "home" and parsed[chunk].featured # show in home only feature widget
+      widgets.push
+          id      : parsed[chunk].id
+          name    : parsed[chunk].name
+          type    : parsed[chunk].type
+    else if page == parsed[chunk].page
+      widgets.push
         id      : parsed[chunk].id
         name    : parsed[chunk].name
         type    : parsed[chunk].type
-        page    : parsed[chunk].page
-        featured: parsed[chunk].featured
 
   return widgets
 
@@ -43,23 +62,15 @@ widgetToHTML = (widgetsData)->
 
   return html
 
-getWidgetObject = ()->
-  deferred  = Q.defer()
-  fileUrl   = './data/widget.json'
-
-  fs.readFile fileUrl, "utf-8", (err, data)->
-    if err
-      deferred.reject ":-[ widget.coffee -> #{err}"
-    else
-      deferred.resolve JSON.parse(data)
-
-  return deferred.promise
-
-renderW =  (feature)->
-  feature ?= false
+renderW =  ( page )->
   deferred = Q.defer()
 
   getWidgetObject()
+  .then (data)->
+    return {
+    data: data
+    page: page
+    }
   .then parseWidget
   .then widgetToHTML
   .then(null, console.error).done (data)->
