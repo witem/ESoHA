@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <% include 'head'%>
+</head>
+<body>
+<% include 'header'%>
+<% include 'menu'%>
+<section class="mainContent">
+    <h1><%=@message%></h1>
+    <h2><%=@error.status%></h2>
+    <pre><%=@error.stack%></pre>
+</section>
+</body>
+</html>

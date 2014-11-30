@@ -1,0 +1,14 @@
+<nav class="mainMenu">
+    <h3>Меню</h3>
+    <ul>
+        <% if (@menuArray && @menuArray.length > 0) : %>
+            <% for val in @menuArray : %>
+            <li>
+                <a href="<%-val.href%>"><%-val.name%></a>
+            </li>
+            <% end %>
+        <% else : %>
+            <p class="error">Помилка отримання меню</p>
+        <% end %>
+    </ul>
+</nav>

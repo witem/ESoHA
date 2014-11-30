@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <% include 'head'%>
+</head>
+<body>
+    <% include 'header'%>
+    <% include 'menu'%>
+    <section class="mainContent">
+        <h1><%-@title%></h1>
+        <div class="widgets container-fluid">
+            <% if (@widgetArray && @widgetArray.length > 0) : %>
+                <% for val in @widgetArray : %>
+                    <%-val%>
+                <% end %>
+            <% else : %>
+                <p class="error">Помилка отримання віджетів</p>
+            <% end %>
+        </div>
+    </section>
+</body>
+</html>
