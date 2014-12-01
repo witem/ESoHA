@@ -1,0 +1,27 @@
+[
+  {
+    "timestamp": 1417413403760,
+    "type": "error",
+    "message": "Message for error"
+  },
+  {
+    "timestamp": 1417412403760,
+    "type": "warning",
+    "message": "No cookie transmitted."
+  },
+  {
+    "timestamp": 1417466203760,
+    "type": "log",
+    "message": "rule lampe-1: turned Lamp 2 on"
+  },
+  {
+    "timestamp": 1417469353760,
+    "type": "log",
+    "message": "rule lampe-1: Your turned on lamp 1, turning on lamp 2 for you."
+  },
+  {
+    "timestamp": 1417469153760,
+    "type": "log",
+    "message": "rule reset-temperature: set $temperature to 30"
+  }
+]

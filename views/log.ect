@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <% include 'head'%>
+</head>
+<body>
+<% include 'header'%>
+<% include 'menu'%>
+<section class="mainContent">
+    <h1><%-@title%></h1>
+    <ul class="log-list">
+        <% if (@logArray && @logArray.length > 0) : %>
+            <% for val in @logArray : %>
+                <%-val%>
+            <% end %>
+        <% else : %>
+            <p class="error">Помилка отримання віджетів</p>
+        <% end %>
+    </ul>
+</section>
+</body>
+</html>

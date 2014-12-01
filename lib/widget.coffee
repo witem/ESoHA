@@ -78,4 +78,4 @@ renderW =  ( page )->
 
   return deferred.promise
 
-module.exports.renderWidget = renderW
+module.exports.render = renderW

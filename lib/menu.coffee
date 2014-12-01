@@ -7,7 +7,7 @@ renderMenu = (parsed)->
   for chunk of parsed
     menus.push
       'name': parsed[chunk].name
-      'href': parsed[chunk].class + '-' + parsed[chunk].id
+      'href': parsed[chunk].class + '-' + parsed[chunk].id #TODO readable href
 
   return menus
 
@@ -30,6 +30,6 @@ renderM =  ()->
   .then(null, console.error).done (data)->
     deferred.resolve(data)
 
-  return deferred.promise
+  return deferred.promise #TODO menu element "Правила автоматизації"
 
-module.exports.renderMenu = renderM;
+module.exports.render = renderM;

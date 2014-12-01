@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <% include 'head'%>
+</head>
+<body>
+<% include 'header'%>
+<% include 'menu'%>
+<section class="mainContent">
+    <h1><%-@title%></h1>
+    <div class="settings container-fluid">
+        <% if (@settingsArray && @settingsArray.length > 0) : %>
+        <% for val in @settingsArray : %>
+        <%-val%>
+        <% end %>
+        <% else : %>
+        <p class="error">Помилка отримання налаштуваннь</p>
+        <% end %>
+    </div>
+</section>
+</body>
+</html>

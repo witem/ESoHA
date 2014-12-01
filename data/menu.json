@@ -19,12 +19,6 @@
     "name": "Кімната 4",
     "class": "room"
   },
-
-  "settings-rules": {
-    "id": 1,
-    "name": "Правила автоматизації",
-    "class": "settings"
-  },
   "settings-logs": {
     "id": 2,
     "name": "Лог системи",

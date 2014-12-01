@@ -9,8 +9,6 @@ ECT           = require 'ect'
 connectCoffeescript  = require 'connect-coffee-script'
 coffeeScript  = require 'coffee-script'
 
-routes        = require('./routes/index')
-users         = require('./routes/users')
 
 app = express()
 
@@ -27,7 +25,6 @@ app.use logger('dev')
 app.use bodyParser.json()
 app.use bodyParser.urlencoded({ extended: false })
 app.use cookieParser()
-console.log path.join(__dirname, 'public_coffee')
 app.use(connectCoffeescript
     src: path.join(__dirname, 'public_coffee')
     dest: path.join(__dirname, 'public')
@@ -37,8 +34,10 @@ app.use(connectCoffeescript
 )
 app.use express.static(path.join(__dirname, 'public'))
 
-app.use '/', routes
-app.use '/room-*', users
+app.use '/', require('./routes/index')
+app.use '/room-*', require('./routes/room')
+app.use '/settings-2', require('./routes/log')
+app.use '/settings-6', require('./routes/settings')
 
 # catch 404 and forward to error handler
 app.use (req, res, next)->
@@ -62,7 +61,7 @@ if app.get('env') == 'development'
 # no stacktraces leaked to user
 app.use (err, req, res, next)->
   res.status err.status || 500
-  res.render 'error',
+  res.render 'error',  #TODO add menu
     message: err.message
     error: {}
 

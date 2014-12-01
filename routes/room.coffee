@@ -1,6 +1,6 @@
-express = require('express')
-menu      = require('../lib/menu')
-widget    = require('../lib/widget')
+express   = require 'express'
+menu      = require '../lib/menu'
+widget    = require '../lib/widget'
 
 router  = express.Router()
 
@@ -11,14 +11,14 @@ router.get '/', (req, res, next)->
 
   indexObj = { title: 'ESoHA - room-'+pageId}
 
-  menu.renderMenu().then (menu)->
+  menu.render().then (menu)->
     indexObj.menuArray = menu
     return 'room-'+pageId
-  .then(widget.renderWidget).then (widget)->
+  .then(widget.render).then (widget)->
     indexObj.widgetArray = widget
   .done ()->
     unless indexObj.widgetArray.length
-      err = new Error('Not Found')
+      err = new Error('Not Found room')
       err.status = 404
       next err
     else
