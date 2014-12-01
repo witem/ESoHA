@@ -5,7 +5,9 @@ favicon       = require('serve-favicon')
 logger        = require('morgan')
 cookieParser  = require('cookie-parser')
 bodyParser    = require('body-parser')
-ECT = require 'ect'
+ECT           = require 'ect'
+connectCoffeescript  = require 'connect-coffee-script'
+coffeeScript  = require 'coffee-script'
 
 routes        = require('./routes/index')
 users         = require('./routes/users')
@@ -25,6 +27,14 @@ app.use logger('dev')
 app.use bodyParser.json()
 app.use bodyParser.urlencoded({ extended: false })
 app.use cookieParser()
+console.log path.join(__dirname, 'public_coffee')
+app.use(connectCoffeescript
+    src: path.join(__dirname, 'public_coffee')
+    dest: path.join(__dirname, 'public')
+    compile: (str, options, coffeePath)->
+      options.bare = true
+      return coffeeScript.compile(str, options)
+)
 app.use express.static(path.join(__dirname, 'public'))
 
 app.use '/', routes
